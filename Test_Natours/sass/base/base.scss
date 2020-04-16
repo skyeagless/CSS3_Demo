@@ -1,0 +1,26 @@
+*,
+*::after,
+*:before{
+  margin: 0;
+  padding: 0;
+  /*对元素指定宽度和高度包括了 padding 和 border 。*/
+  /*通过从已设定的宽度和高度分别减去边框和内边距才能得到内容的宽度和高度。,inherit所有的元素都继承这一点*/
+  box-sizing: inherit;
+}
+
+/*定义root font-size*/
+html{
+  font-size: 62.5%
+}
+
+body{
+  font-family: "Lato",sans-serif;
+  font-weight: 400;
+  /*font-size: 16px;*/
+  /*number	设置数字，此数字会与当前的字体尺寸相乘来设置行间距。*/
+  line-height: 1.7;
+  color: $color-gray-dark;
+  padding: 3rem;
+
+  box-sizing: border-box;
+}

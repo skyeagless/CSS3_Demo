@@ -1,0 +1,184 @@
+@charset "UTF-8";
+/**https://www.zhihu.com/question/356834039/answer/902427488 CSS RESET**/
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(1.5rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+*,
+*::after,
+*:before {
+  margin: 0;
+  padding: 0;
+  /*对元素指定宽度和高度包括了 padding 和 border 。*/
+  /*通过从已设定的宽度和高度分别减去边框和内边距才能得到内容的宽度和高度。,inherit所有的元素都继承这一点*/
+  box-sizing: inherit; }
+
+/*定义root font-size*/
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: "Lato",sans-serif;
+  font-weight: 400;
+  /*font-size: 16px;*/
+  /*number	设置数字，此数字会与当前的字体尺寸相乘来设置行间距。*/
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem;
+  box-sizing: border-box; }
+
+/*:link表示鼠标点击之前，也称为原始状态*/
+/*:hover表示鼠标悬停状态*/
+/*:active表示鼠标点击状态*/
+/*:visited表示鼠标点击之后状态*/
+.btn:link, .btn:visited {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all 0.2s;
+  position: relative;
+  font-size: 1.6rem; }
+
+.btn:hover {
+  transform: translateY(-0.3rem);
+  /*前两个参数是x,y,第三个是阴影强度，第四个是阴影颜色*/
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; }
+
+.btn:active {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+.btn::after {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  /*这四句是将伪类藏到真实的对象后面去，重叠*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s; }
+
+.btn-white {
+  margin-top: 6rem;
+  background-color: #fff;
+  color: #777; }
+  .btn-white::after {
+    background-color: #fff; }
+
+/*刷新的时候向上运动，有0.75s的延迟，然后运行0.5s*/
+.btn-animated {
+  animation: moveInBottom .5s ease-out .75s;
+  /*在 animation-delay 所指定的一段时间内，在动画显示之前，应用开始属性值（在第一个关键帧中定义）,
+  这样就不会出现从零点然后跳帧的情况,延迟时间走完之后才出现第一帧*/
+  /*0%{
+     opacity: 0;
+      transform: translateY(15px);
+  }  https://segmentfault.com/q/1010000003867335 */
+  animation-fill-mode: backwards; }
+
+.header {
+  /*vh：1vh等于视口高度的1%。*/
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../../img/hero.jpg");
+  /*此时会保持图像的纵横比并将图像缩放成将完全覆盖背景定位区域的最小大小。*/
+  background-size: cover;
+  /*设置背景图像的起始位置*/
+  background-position: top;
+  /*多边形裁切*/
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  position: relative; }
+  .header .logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+    .header .logo-box .logo {
+      height: 3.5rem; }
+  .header .text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /*https://www.w3cplus.com/content/css3-transform
+    translate水平移动，这个百分比是自己的百分比*/
+    transform: translate(-50%, -50%);
+    /*整体居中,因为按钮是inline-block可以按照文字来处理*/
+    text-align: center; }
+    .header .text-box .heading-primary {
+      color: #fff;
+      text-transform: uppercase;
+      /*防止震动*/
+      backface-visibility: hidden; }
+      .header .text-box .heading-primary .heading-primary-main {
+        display: block;
+        font-size: 6rem;
+        letter-spacing: 3.5rem;
+        font-weight: 400;
+        animation-name: moveInLeft;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+        /*animation-delay: 3s;*/ }
+      .header .text-box .heading-primary .heading-primary-sub {
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1.7rem;
+        animation: moveInRight 1s ease-out; }
+
+.row {
+  max-width: 114rem;
+  background-color: #eee;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: "";
+    display: block;
+    clear: both; }
+  .row [class^="col-"] {
+    background-color: orangered;
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2* 6rem) / 3); }
+  .row .col-2-of-3 {
+    width: calc(2*((100% - 2* 6rem) / 3) + 6rem); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3* 6rem) / 4); }
+  .row .col-2-of-4 {
+    width: calc(2*((100% - 3* 6rem) / 4) + 6rem); }
+  .row .col-3-of-4 {
+    width: calc(3*((100% - 3* 6rem) / 4) + 2*6rem); }
