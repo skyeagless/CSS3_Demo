@@ -9,3 +9,10 @@
 @import "components/button";
 @import "components/header";
 @import "components/grid";
+@import "components/about_section";
+@import "components/composition";
+
+.header{
+  background-image: linear-gradient(to right bottom,rgba($color-primary-light, 0.8),rgba($color-primary-dark, 0.8)),
+  url("../img/hero.jpg");
+}

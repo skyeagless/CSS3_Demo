@@ -1,6 +1,6 @@
 .row{
   max-width: $grid-width;
-  background-color: #eee;
+
   //居中
   margin: 0 auto ;
   //最后一行不需要margin-bottom
@@ -12,7 +12,6 @@
 
   //属性选择器，以col为prefix的class
   [class^="col-"]{
-    background-color: orangered;
     float: left;
     &:not(:last-child){
       margin-right: $gutter-horizontal;
