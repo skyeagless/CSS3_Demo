@@ -97,6 +97,13 @@ body {
   .btn-white::after {
     background-color: #fff; }
 
+.btn-green {
+  margin-top: 6rem;
+  background-color: #55c57a;
+  color: #fff; }
+  .btn-green::after {
+    background-color: #55c57a; }
+
 /*刷新的时候向上运动，有0.75s的延迟，然后运行0.5s*/
 .btn-animated {
   animation: moveInBottom .5s ease-out .75s;
@@ -225,7 +232,7 @@ body {
     font-size: 1.6rem;
     font-weight: 700;
     text-transform: uppercase; }
-  .section-about .row .col-1-of-2 .u-margin-bottom-small {
+  .section-about .row .col-1-of-2 .u-margin-bottom-8 {
     margin-bottom: 1.5rem; }
   .section-about .row .col-1-of-2 .paragraph {
     font-size: 1.6rem; }
@@ -257,5 +264,138 @@ body {
     left: 20%;
     top: 18rem; }
 
+.section-features {
+  padding: 20rem 0;
+  transform: skewY(-7deg);
+  margin-top: -10rem; }
+  .section-features > * {
+    transform: skewY(7deg); }
+  .section-features .feature-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 1.5rem;
+    padding: 2.5rem;
+    text-align: center;
+    border-radius: .3rem;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+    transition: all .3s; }
+    .section-features .feature-box .u-margin-bottom-small {
+      margin-bottom: 1.5rem; }
+    .section-features .feature-box .feature-box-icon {
+      display: inline-block;
+      font-size: 6rem;
+      margin-bottom: .5rem;
+      background-image: linear-gradient(to right, #7ed56f, #28b485);
+      -webkit-background-clip: text;
+      color: transparent; }
+    .section-features .feature-box:hover {
+      transform: translateY(-1.5rem) scale(1.03); }
+
+.section-tours {
+  background-color: #f7f7f7;
+  padding: 25em 0 15rem 0;
+  margin-top: -10rem; }
+  .section-tours .u-center-text {
+    text-align: center;
+    margin: 0 auto; }
+    .section-tours .u-center-text .heading-secondary {
+      font-size: 3.5rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      background-image: linear-gradient(to right, #7ed56f, #28b485);
+      display: inline-block;
+      -webkit-background-clip: text;
+      color: transparent;
+      letter-spacing: .2rem;
+      transition: all .2s; }
+      .section-tours .u-center-text .heading-secondary:hover {
+        transform: skewY(2deg) skewX(15deg) scale(1.05);
+        text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.3); }
+  .section-tours .u-margin-bottom-8 {
+    margin-bottom: 8rem; }
+  .section-tours .discover_btn {
+    text-align: center; }
+
+.card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 50rem; }
+  .card .card_side {
+    height: 50rem;
+    transition: all .8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: .3rem;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+    .card .card_side .card-front-pic {
+      height: 23rem;
+      background-blend-mode: screen;
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
+    .card .card_side .card-front-heading {
+      font-size: 2.8rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      color: #fff;
+      position: absolute;
+      top: 12rem;
+      right: 2rem;
+      text-align: right;
+      width: 67%; }
+      .card .card_side .card-front-heading .card_heading_span {
+        background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85));
+        padding: 1rem 1.5rem;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone; }
+    .card .card_side .card-front-detail {
+      padding: 3rem; }
+      .card .card_side .card-front-detail ul {
+        list-style: none;
+        width: 80%;
+        margin: 0 auto; }
+        .card .card_side .card-front-detail ul li {
+          text-align: center;
+          font-size: 1.5rem;
+          padding: 1rem; }
+          .card .card_side .card-front-detail ul li:not(:last-child) {
+            border-bottom: 1px solid #eeeeee; }
+  .card .front {
+    background-color: #fff; }
+  .card .back {
+    background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
+    transform: rotateY(180deg); }
+    .card .back .cta {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      text-align: center; }
+      .card .back .cta .price {
+        text-align: center;
+        margin-bottom: 8rem;
+        color: #fff; }
+        .card .back .cta .price .only {
+          font-size: 1.4rem;
+          text-transform: uppercase; }
+        .card .back .cta .price .value {
+          font-size: 6rem;
+          font-weight: 100; }
+  .card:hover .front {
+    transform: rotateY(-180deg); }
+  .card:hover .back {
+    transform: rotateY(0deg); }
+
 .header {
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg"); }
+
+.section-features {
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/nat-4.jpg");
+  background-size: cover; }
+
+.card-front-pic {
+  background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url("../img/nat-5.jpg");
+  background-size: cover; }

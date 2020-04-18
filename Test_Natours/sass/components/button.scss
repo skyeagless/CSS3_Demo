@@ -50,6 +50,15 @@
   }
 }
 
+.btn-green{
+  margin-top: 6rem;
+  background-color: $color-primary;
+  color: $color-white;
+  &::after{
+    background-color: $color-primary;
+  }
+}
+
 /*刷新的时候向上运动，有0.75s的延迟，然后运行0.5s*/
 .btn-animated{
   animation: moveInBottom .5s ease-out .75s;

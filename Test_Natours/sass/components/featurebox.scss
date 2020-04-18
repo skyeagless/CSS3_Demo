@@ -1,0 +1,38 @@
+.section-features{
+  padding: 20rem 0;
+  transform: skewY(-7deg);
+  //所有子元素，注意不是后代元素，就是row
+  & > *{
+    transform: skewY(7deg);
+  }
+  margin-top: -10rem;
+
+  .feature-box{
+    background-color: rgba($color-white,.8);
+    font-size:1.5rem;
+    padding: 2.5rem;
+    text-align: center;
+    border-radius: .3rem;
+    box-shadow: 0 1.5rem 4rem rgba($color-black,.15);
+    transition: all .3s;
+
+    .u-margin-bottom-small{
+      margin-bottom: 1.5rem;
+    }
+
+    .feature-box-icon{
+      display: inline-block;
+      font-size: 6rem;
+      margin-bottom: .5rem;
+      background-image:linear-gradient(to right,$color-primary-light,$color-primary-dark);
+      -webkit-background-clip: text;
+      color:transparent;
+    }
+
+    &:hover{
+      transform: translateY(-1.5rem) scale(1.03);
+    }
+  }
+
+}
+

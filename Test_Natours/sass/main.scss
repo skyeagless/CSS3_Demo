@@ -11,8 +11,24 @@
 @import "components/grid";
 @import "components/about_section";
 @import "components/composition";
+@import "components/featurebox";
+@import "components/tours";
+@import "components/cards";
 
 .header{
   background-image: linear-gradient(to right bottom,rgba($color-primary-light, 0.8),rgba($color-primary-dark, 0.8)),
   url("../img/hero.jpg");
 }
+
+.section-features{
+  background-image: linear-gradient(to right bottom,rgba($color-primary-light, 0.8),rgba($color-primary-dark, 0.8)),
+  url("../img/nat-4.jpg");
+  background-size: cover;
+}
+
+.card-front-pic{
+  background-image: linear-gradient(to right bottom,$color-secondary-light_1,$color-secondary-light_2)
+  ,url("../img/nat-5.jpg");
+  background-size: cover;
+}
+
