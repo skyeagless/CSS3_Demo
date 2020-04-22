@@ -14,6 +14,11 @@
 @import "components/featurebox";
 @import "components/tours";
 @import "components/cards";
+@import "components/story_section";
+@import "components/bg-video";
+@import "components/book_section";
+@import "components/form";
+@import "components/footer";
 
 .header{
   background-image: linear-gradient(to right bottom,rgba($color-primary-light, 0.8),rgba($color-primary-dark, 0.8)),
@@ -29,6 +34,13 @@
 .card-front-pic{
   background-image: linear-gradient(to right bottom,$color-secondary-light_1,$color-secondary-light_2)
   ,url("../img/nat-5.jpg");
+  background-size: cover;
+}
+
+.book{
+  background-image: linear-gradient(105deg,
+                  rgba($color-white,.85) 0%, rgba($color-white,.85) 50%, transparent 50%),
+                  url("../img/nat-10.jpg");
   background-size: cover;
 }
 

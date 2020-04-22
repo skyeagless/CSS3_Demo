@@ -1,0 +1,42 @@
+.section-book{
+  padding: 15rem 0;
+  background-image: linear-gradient(to right bottom,$color-primary-light,$color-primary-dark);
+
+  .book{
+    border-radius: 3px;
+    height: 50rem;
+    box-shadow: 0 1.5rem 4rem rgba($color-black,.2);
+    .book-form{
+      width: 50%;
+      padding: 6rem;
+
+      .u-center-text{
+        text-align:center;
+        margin: 0 auto;
+        transform: translateX(-7rem);
+        .heading-secondary{
+          font-size: 3.5rem;
+          text-transform: uppercase;
+          font-weight: 700;
+          background-image: linear-gradient(to right, $color-primary-light,$color-primary-dark);
+          display: inline-block;
+          //规定背景的绘制区域
+          -webkit-background-clip: text;
+          color: transparent;
+
+          letter-spacing: .2rem;
+          transition: all .2s;
+
+          &:hover{
+            //一个元素在二维平面上的倾斜转换
+            transform: skewY(2deg) skewX(15deg) scale(1.05);
+            text-shadow: .5rem 1rem 2rem rgba($color-black,.3);
+          }
+        }
+      }
+      .u-margin-bottom-medium{
+        margin-bottom: 5rem;
+      }
+    }
+  }
+}

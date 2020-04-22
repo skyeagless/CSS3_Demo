@@ -3,7 +3,7 @@
 /*:active表示鼠标点击状态*/
 /*:visited表示鼠标点击之后状态*/
 .btn{
-  &:link,&:visited{
+  &,&:link,&:visited{
     text-decoration: none;
     text-transform: uppercase;
     padding: 1.5rem 4rem;
@@ -92,3 +92,15 @@
     transform: translateY(0);
   }
 }
+
+.btn-green-2{
+  margin-top: 2.5rem;
+  background-color: $color-primary;
+  color: $color-white;
+  border: none;
+
+  &::after{
+    background-color: $color-primary;
+  }
+}
+

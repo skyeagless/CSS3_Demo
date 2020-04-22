@@ -1,0 +1,50 @@
+.footer{
+  background-color: #333;
+  padding: 8rem 0;
+  font-size: 1.4rem;
+
+  .footer_logo_box{
+    text-align: center;
+    .footer_logo{
+      width: 15rem;
+      margin-bottom: 8rem;
+
+    }
+
+    .footer_nav{
+      border-top: 1px solid darkgray;
+      padding-top: 2rem;
+      display: inline-block;
+
+      .footer_list{
+        list-style: none;
+        .footer_item{
+          display: inline-block;
+          &:not(:last-child){
+            margin-right: 1.5rem;
+          }
+          .footer_link{
+            &:link,&:visited{
+              color: gray;
+              text-decoration: none;
+              text-transform: uppercase;
+            }
+            &:hover,&:active{
+              color: $color-primary;
+              box-shadow: 0 1rem 2rem rgba($color-black,.3);
+            }
+          }
+        }
+      }
+    }
+
+    .footer_copyright{
+      border-top: 1px solid darkgray;
+      padding-top: 2rem;
+      display: inline-block;
+      text-align : justify;
+    }
+  }
+
+
+}
