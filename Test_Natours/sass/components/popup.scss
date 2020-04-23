@@ -1,0 +1,98 @@
+.popup{
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  z-index: 999999;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s;
+
+  &:target{
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .popup_content{
+    width: 75%;
+    background-color: $color-white;
+    box-shadow: 0 2rem 4rem rgba($color-black,.2);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 3px;
+    display: table-row;
+    overflow: hidden;
+
+    .popup_left{
+      width: 33.33%;
+      display: table-cell;
+
+      .popup_img{
+        display: block;
+        width: 100%;
+      }
+    }
+
+    .popup_right{
+      width: 66.67%;
+      display: table-cell;
+      //中线对齐
+      vertical-align: middle;
+      padding: 3rem 5rem;
+
+      .popup_close{
+        &:link,&:visited{
+          color: #777777;
+          //只要父级元素=设置了position值（absolute或者relative），那么子元素的position都是以父级元素来定位的。
+          position: absolute;
+          top:2.5rem;
+          right: 2.5rem;
+          font-size: 3rem;
+          text-decoration: none;
+          display: inline-block;
+          line-height: 1.7rem;
+        }
+        &:hover{
+          color:$color-primary;
+        }
+      }
+
+      .heading-secondary {
+        font-size: 3.5rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+        display: inline-block;
+        //规定背景的绘制区域
+        -webkit-background-clip: text;
+        color: transparent;
+
+        letter-spacing: .2rem;
+        transition: all .2s;
+
+        &:hover {
+          //一个元素在二维平面上的倾斜转换
+          transform: skewY(2deg) skewX(15deg) scale(1.05);
+          text-shadow: .5rem 1rem 2rem rgba($color-black, .3);
+        }
+      }
+      .heading-tertiary{
+        font-size: 1.6rem;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      .popup_text{
+        font-size: 1.5rem;
+        column-count: 2;
+        column-gap: 4rem;
+        column-rule: 1px solid #eee;
+      }
+    }
+
+  }
+}
